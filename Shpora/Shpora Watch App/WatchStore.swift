@@ -179,7 +179,7 @@ final class WatchMathCache {
         for url in urls {
             let parts = url.deletingPathExtension().lastPathComponent.split(separator: "~")
             guard parts.count == 3, let descent = Double(parts[1]), let scale = Double(parts[2]) else { continue }
-            files[String(parts[0])] = (url, descent / 1000, max(scale, 1))
+            files[String(parts[0])] = (url: url, descent: CGFloat(descent / 1000), scale: CGFloat(max(scale, 1)))
         }
     }
 
